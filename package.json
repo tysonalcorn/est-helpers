@@ -1,0 +1,19 @@
+{
+  "name": "@tysonalcorn/est-helpers",
+  "version": "1.0.0",
+  "description": "Helpers for EST device data",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tysonalcorn/est-helpers.git"
+  },
+  "author": "Tyson Alcorn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tysonalcorn/est-helpers/issues"
+  },
+  "homepage": "https://github.com/tysonalcorn/est-helpers#readme"
+}
