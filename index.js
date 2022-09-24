@@ -35,7 +35,7 @@ class Devices {
         }
         return this.devices;
     }
-    update (oldDevices = [{}]) {
+    merge (oldDevices = [{}]) {
         if(!this.#devicesParsed) this.init();
         this.devices = updateDeviceData(this.devices, oldDevices);
         return this.devices;
