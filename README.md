@@ -1,6 +1,6 @@
 # est-helpers
 
-Helpers for EST device data
+Helpers for EST device data. Work in progress.
 
 ## Table of Contents
 
@@ -9,6 +9,8 @@ Helpers for EST device data
     - [Return Values](#return-values)
       - [Loop Data](#loop-data)
       - [Device Data](#device-data)
+        - [EST3](#est3)
+        - [IO](#io)
   - [Constants](#constants)
 
 ## Usage
@@ -83,6 +85,8 @@ devices = deviceSetter().init();
 
 ##### Device Data
 
+###### EST3
+
 ```javascript
 [
     {
@@ -108,6 +112,11 @@ devices = deviceSetter().init();
     message: 'SMOKE DETECTOR L1D1 AT FACP'
   }
 ]
+```
+
+###### IO
+
+```javascript
 ```
 
 ### Constants
