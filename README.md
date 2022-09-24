@@ -2,6 +2,15 @@
 
 Helpers for EST device data
 
+## Table of Contents
+
+- [Usage](#usage)
+  - [Devices](#devices)
+    - [Return Values](#return-values)
+      - [Loop Data](#loop-data)
+      - [Device Data](#device-data)
+  - [Constants](#constants)
+
 ## Usage
 
 ### Devices
