@@ -7,6 +7,7 @@ const barcodeTypes = require('./src/constants/barcodeTypes.js');
 
 class Devices {
     #config = {};
+    #devicesParsed = false;
     constructor (devices = [{}], config = {}, loops = null) {
         this.devices = devices;
         this.#config = config;
@@ -26,12 +27,16 @@ class Devices {
         this.loops = loops;
     }
     init (devices, config) {
-        this.#set(devices, config)
-        if(!this.loops && this.#config.facp !== 'io') this.getLoops();
-        this.devices = setDeviceData(this.loops, this.devices, this.#config);
+        if(!this.#devicesParsed) {
+            this.#set(devices, config)
+            if(!this.loops && this.#config.facp !== 'io') this.getLoops();
+            this.devices = setDeviceData(this.loops, this.devices, this.#config);
+            this.#devicesParsed = true;
+        }
         return this.devices;
     }
     update (oldDevices = [{}]) {
+        if(!this.#devicesParsed) this.init();
         this.devices = updateDeviceData(this.devices, oldDevices);
         return this.devices;
     }

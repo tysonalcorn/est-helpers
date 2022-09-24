@@ -16,7 +16,7 @@ const updateDeviceData = (newDevices = [], oldDevices = []) => {
         if (
           oldDevice.data.message != newDevice.message ||
           oldDevice.data.deviceType != newDevice.deviceType ||
-          !oldDevice.data.abbreviation ||
+          !oldDevice.data.logicalAddress ||
           oldDevice.data.notInProgram ||
           oldDevice.data.shouldBeDeleted ||
           oldDevice.data.barcode != newDevice.barcode ||
