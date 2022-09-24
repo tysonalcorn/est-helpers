@@ -26,7 +26,7 @@ logic to extract device data from EST report
 let devices = data
 */
 let config = {
-    restartLoopsAfterPanel: true // resets loop to 1 for each panel; loops are numbered consecutively by panel and then card otherwise
+    restartLoopsAfterPanel: true, // resets loop to 1 for each panel; loops are numbered consecutively by panel and then card otherwise
     continuousAddressing: false, //if true, device addressing continues after each loop, even if on different cards (i.e. loop 3 would start with device 501)
     separateAddressing: true, //restart device numbering after each loop, even if on the same card
     facp: 'est3' //or 'io'; type of panel being used
@@ -55,7 +55,7 @@ logic to extract device data from EST report
 let devices = data
 */
 let config = {
-    restartLoopsAfterPanel: true // resets loop to 1 for each panel; loops are numbered consecutively by panel and then card otherwise
+    restartLoopsAfterPanel: true, // resets loop to 1 for each panel; loops are numbered consecutively by panel and then card otherwise
     continuousAddressing: false, //if true, device addressing continues after each loop, even if on different cards (i.e. loop 3 would start with device 501)
     separateAddressing: true, //restart device numbering after each loop, even if on the same card. Will restart after panel if restartLoopsAfterPanel is true
     facp: 'est3' //or 'io'; type of panel being used
