@@ -9,8 +9,6 @@ Helpers for EST device data
 ```javascript
 import {Devices} from '@tysonalcorn/est-helpers';
 
-const deviceSetter = new Devices;
-
 /*
 logic to extract device data from EST report
 ...
@@ -18,28 +16,27 @@ let devices = data
 */
 let config = {
     restartLoopsAfterPanel: true // resets loop to 1 for each panel; loops are numbered consecutively by panel and then card otherwise
+    continuousAddressing: false, //if true, device addressing continues after each loop, even if on different cards (i.e. loop 3 would start with device 501)
+    separateAddressing: true, //restart device numbering after each loop, even if on the same card
+    facp: 'est3' //or 'io'; type of panel being used
 };
 
-const loops = deviceSetter(devices, config).getLoops(); //returns array with loop data
+const deviceSetter = new Devices(devices, config);
+
+let loops = deviceSetter().getLoops(); //returns array with loop data
 
 /*
 logic to allow user to edit loop numbers if necessary to match fire alarm drawings
 ...
 */
-config = {
-    continuousAddressing: false, //if true, device addressing continues after each loop, even if on different cards (i.e. loop 3 would start with device 501)
-    separateAddressing: true, //restart device numbering after each loop, even if on the same card
-    facp: 'est3' //or 'io'; type of panel being used
-}
 
-devices = deviceSetter(devices, config, loops).init(); //returns array of device objects with loop data included
+devices = deviceSetter().setLoops(loops).init(); //returns array of device objects with loop data included
 ```
 
-If loops variable is not provided with init() method, the getLoops() method will be called internally
+Without editing loops:
+
 ```javascript
 import {Devices} from '@tysonalcorn/est-helpers';
-
-const deviceSetter = new Devices;
 
 /*
 logic to extract device data from EST report
@@ -53,7 +50,9 @@ let config = {
     facp: 'est3' //or 'io'; type of panel being used
 };
 
-const devices = deviceSetter(devices, config).init(); //returns array with loop data
+const deviceSetter = new Devices(devices, config);
+
+devices = deviceSetter().init();
 ```
 
 #### Return Values
@@ -101,3 +100,5 @@ const devices = deviceSetter(devices, config).init(); //returns array with loop 
   }
 ]
 ```
+
+### Constants
