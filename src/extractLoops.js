@@ -1,16 +1,16 @@
-const autoloop = (
+const extractLoops = (
     data = [],
-    numberSeparately
+    config = {restartNumberingAfterPanel: false}
   ) => {
+    const {restartNumberingAfterPanel} = config;
     const array = [];
     const loops = [];
     data.forEach((item) => {
       const {logicalAddress} = item;
-      const abbreviation = logicalAddress;
       const panelCard =
-        abbreviation[0] + abbreviation[1] + abbreviation[2] + abbreviation[3];
+        logicalAddress[0] + logicalAddress[1] + logicalAddress[2] + logicalAddress[3];
       const device = parseInt(
-        abbreviation[4] + abbreviation[5] + abbreviation[6] + abbreviation[7]
+        logicalAddress[4] + logicalAddress[5] + logicalAddress[6] + logicalAddress[7]
       );
       const loop =
         device >= 1 && device <= 250
@@ -22,12 +22,11 @@ const autoloop = (
       if(!array.find(x => panelCardLoop === x)) array.push(panelCardLoop);
     });
     array.sort();
-    console.log(array);
     let firstLoop = 1;
     let lastPanel = 1;
     array.forEach((item) => {
       let obj;
-      if (numberSeparately) {
+      if (restartNumberingAfterPanel) {
         if (parseInt(item[0] + item[1]) > lastPanel) {
           firstLoop = 1;
           lastPanel = parseInt(item[0] + item[1]);
@@ -78,4 +77,4 @@ const autoloop = (
     return loops;
   };
 
-  module.exports = autoloop;
+  module.exports = extractLoops;

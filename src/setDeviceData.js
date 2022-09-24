@@ -1,15 +1,17 @@
 const compareValues = require('./helpers/compareValues.js');
+const setLoop = require('./setLoop.js')
 const deviceTypes = require('./constants/deviceTypes');
 
-const setDeviceData = (loops, data = [], continuousAddressing, separateAddressing, facp) => {
-    console.log(continuousAddressing, separateAddressing)
+const setDeviceData = (loops, data = [], config = {continuousAddressing: false, separateAddressing: false, facp: 'io' || 'est3'}) => {
+    const {continuousAddressing, separateAddressing, facp} = config;
     let array = [];
-    data.sort(compareValues('abbreviation')).forEach((item) => {
-      const {abbreviation, type, message1, message2, model, barcode, loop, label, panelName} = item;
-      const panel = facp === 'io' ? 1 : parseInt(abbreviation[0] + abbreviation[1]);
-      const card = facp === 'io' ? 2 : parseInt(abbreviation[2] + abbreviation[3]);
+    data.sort(compareValues('logicalAddress')).forEach((item) => {
+      const {logicalAddress, type, message1, message2, model, barcode, loop, label, panelName} = item;
+      console.log(logicalAddress, logicalAddress[0])
+      const panel = facp === 'io' ? 1 : parseInt(logicalAddress[0] + logicalAddress[1]);
+      const card = facp === 'io' ? 2 : parseInt(logicalAddress[2] + logicalAddress[3]);
       const address = facp === 'io' ? parseInt(item.address) : parseInt(
-        abbreviation[4] + abbreviation[5] + abbreviation[6] + abbreviation[7]
+        logicalAddress[4] + logicalAddress[5] + logicalAddress[6] + logicalAddress[7]
       );
         const typeValue = deviceTypes.find(typeItem => typeItem.names.find(name => type.toUpperCase().includes(name.toUpperCase())));
         const deviceType = typeValue ? typeValue.value : null
@@ -25,7 +27,7 @@ const setDeviceData = (loops, data = [], continuousAddressing, separateAddressin
         message2: message2 ? message2.trim() : '',
         model,
         barcode: barcode && barcode != '0000000000' ? barcode : null,
-        abbreviation: facp === 'io' ? '' : abbreviation,
+        logicalAddress: facp === 'io' ? '' : logicalAddress,
         type,
         deviceType: deviceType ? `${deviceType}` : 0,
         scanned: barcode && barcode != '0000000000' ? true : false,
