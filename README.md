@@ -16,6 +16,8 @@ Helpers for EST device data. Work in progress.
   - [Create N-Variable Inputs](#create-n-variable-inputs)
     - [Inputs](#inputs-1)
   - [Constants](#constants)
+    - [Device Types](#device-types)
+    - [Barcode Types](#barcode-types)
 
 ## Usage
 
@@ -129,6 +131,27 @@ devices = deviceSetter().init();
 ###### IO
 
 ```javascript
+[
+    {
+        panel: 1,
+        card: 2,
+        address: 1,
+        message1: 'SMOKE DETECTOR L1D1',
+        message2: 'ABOVE FACP',
+        model: 'PS',
+        barcode: null,
+        type: 'Smoke',
+        deviceType: '12',
+        scanned: false,
+        dualModule: false,
+        secondPort: false,
+        loop: 1,
+        alias: {},
+        custom: {},
+        shortName: 'Smoke',
+        message: 'SMOKE DETECTOR L1D1 ABOVE FACP'
+    }
+]
 ```
 
 ### Create Dialer Strings
@@ -204,3 +227,37 @@ const nVarInputs = createNVarInput(devices, matchLabel); //[{input: ''}...]
 - Given the device label `'SD_ANN3_1-2'`, match label `'*_ANN#_*'` would include '3' in the n-variable input
 
 ### Constants
+
+#### Device Types
+
+Array of device type objects with the following form:
+
+```javascript
+[
+    {
+      type: "Heat",
+      value: 10,
+      validBarcodes: [36, 38, 48],
+      names: ["HEAT"],
+      shortName: 'Heat',
+      event: "ALARM",
+      cid: 114
+    }
+]
+```
+
+#### Barcode Types
+
+Array of objects containing data relevant to device barcodes with the following form:
+
+```javascript
+[
+    {
+        type: 'io',
+        dual: false,
+        module: true,
+        defaultModel: 'IO',
+        value: 47,
+    }
+]
+```

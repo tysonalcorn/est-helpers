@@ -4,6 +4,7 @@ const deviceTypes = [
       value: 12,
       validBarcodes: [30, 31, 33, 34, 35, 38, 48],
       names: ["SMOKE", "SMOKEPRE", "SMOKEVFY"],
+      shortName: 'Smoke',
       event: "ALARM",
       cid: 111
     },
@@ -12,6 +13,7 @@ const deviceTypes = [
       value: 10,
       validBarcodes: [36, 38, 48],
       names: ["HEAT"],
+      shortName: 'Heat',
       event: "ALARM",
       cid: 114
     },
@@ -20,6 +22,7 @@ const deviceTypes = [
       value: 139,
       validBarcodes: [28],
       names: ["COALARM", "CO ALARM"],
+      shortName: 'CO',
       event: "COALARM",
       cid: 162
     },
@@ -28,6 +31,7 @@ const deviceTypes = [
       value: 141,
       validBarcodes: [28],
       names: ["COSUPERVISORY", "CO SUPV", "CO MON"],
+      shortName: 'CO',
       event: "COSUPERVISORY",
       cid: 200
     },
@@ -35,6 +39,7 @@ const deviceTypes = [
       type: "Isolator Module",
       value: 15,
       validBarcodes: [36],
+      shortName: 'Iso.',
       names: ["ISOLATOR"],
       event: "TROUBLE",
     },
@@ -43,6 +48,7 @@ const deviceTypes = [
       value: 6,
       validBarcodes: [38, 48, 49],
       names: ["SUPERVISORY"],
+      shortName: 'Sup',
       event: "SUP",
       cid: 200
     },
@@ -51,6 +57,7 @@ const deviceTypes = [
       value: 7,
       validBarcodes: [48, 49],
       names: ["TAMPER"],
+      shortName: 'Tamp',
       event: "SUP",
       cid: 200
     },
@@ -59,6 +66,7 @@ const deviceTypes = [
       value: 19,
       validBarcodes: [48, 49],
       names: ["GENALARM", "ALARM"],
+      shortName: 'Gen Alm',
       event: "ALARM",
       cid: 110
     },
@@ -67,6 +75,7 @@ const deviceTypes = [
       value: 11,
       validBarcodes: [48],
       names: ["PULL"],
+      shortName: 'Pull',
       event: "ALARM",
       cid: 115
     },
@@ -75,6 +84,7 @@ const deviceTypes = [
       value: 17,
       validBarcodes: [48, 49],
       names: ["WATERFLOW"],
+      shortName: 'Flow',
       event: "ALARM",
       cid: 113
     },
@@ -83,6 +93,7 @@ const deviceTypes = [
       value: 38,
       validBarcodes: [48],
       names: ["24VRISER"],
+      shortName: '24V Mon',
       event: "SUP",
       cid: 200
     },
@@ -91,6 +102,7 @@ const deviceTypes = [
       value: 183,
       validBarcodes: [48],
       names: ["ACFAIL"],
+      shortName: 'AC Mon',
       event: "MON",
       cid: 301
     },
@@ -98,6 +110,7 @@ const deviceTypes = [
       type: "Damper Feedback",
       value: 40,
       validBarcodes: [47, 48, 49],
+      shortName: 'Damp Mon',
       names: ["DAMPERFEEDBACK"],
       event: "MON",
     },
@@ -106,6 +119,7 @@ const deviceTypes = [
       value: 41,
       validBarcodes: [47, 48, 49],
       names: ["DOORFEEDBACK"],
+      shortName: 'Door Mon',
       event: "MON",
     },
     {
@@ -113,12 +127,14 @@ const deviceTypes = [
       value: 42,
       validBarcodes: [47, 48, 49],
       names: ["FANFEEDBACK"],
+      shortName: 'Fan Mon',
       event: "MON",
     },
     {
       type: "Monitor",
       value: 32,
       validBarcodes: [48, 49],
+      shortName: 'Mon',
       names: ["MONITOR"],
       event: "MON",
     },
@@ -126,6 +142,7 @@ const deviceTypes = [
       type: "Phone Riser Monitor",
       value: 37,
       validBarcodes: [48, 49],
+      shortName: 'Phone Mon',
       names: ["PHONERISER"],
       event: "MON",
     },
@@ -133,6 +150,7 @@ const deviceTypes = [
       type: "Non-Supervised Output",
       value: 44,
       validBarcodes: [52],
+      shortName: 'Relay',
       names: [
         "NONSUPERVISEDOUTPUT",
         "NSCOMMONALARMOUTPUT",
@@ -152,6 +170,7 @@ const deviceTypes = [
       value: 50,
       validBarcodes: [50, 51],
       names: ["AUDIBLE", "CONTINUOUS"],
+      shortName: 'Aud',
       event: "TROUBLE",
     },
     {
@@ -159,6 +178,7 @@ const deviceTypes = [
       value: 57,
       validBarcodes: [50],
       names: ["VISIBLE", "GENESIS"],
+      shortName: 'Vis',
       event: "TROUBLE",
     },
     {
@@ -166,6 +186,7 @@ const deviceTypes = [
       value: 33,
       validBarcodes: [50, 51, 52],
       names: ["DAMPERCONTROL"],
+      shortName: 'Damp',
       event: "TROUBLE",
     },
     {
@@ -173,6 +194,7 @@ const deviceTypes = [
       value: 34,
       validBarcodes: [50, 51, 52],
       names: ["DOORCONTROL"],
+      shortName: 'Door',
       event: "TROUBLE",
     },
     {
@@ -180,6 +202,7 @@ const deviceTypes = [
       value: 35,
       validBarcodes: [50, 51, 52],
       names: ["FANCONTROL"],
+      shortName: 'Fan',
       event: "TROUBLE",
     },
     {
@@ -187,6 +210,7 @@ const deviceTypes = [
       value: 55,
       validBarcodes: [50, 51],
       names: ["FIREPHONE"],
+      shortName: 'Fire Phone',
       event: "TROUBLE",
     },
   ];

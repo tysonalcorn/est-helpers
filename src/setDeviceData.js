@@ -7,7 +7,6 @@ const setDeviceData = (loops, data = [], config = {continuousAddressing: false, 
     let array = [];
     data.sort(compareValues('logicalAddress')).forEach((item) => {
       const {logicalAddress, type, message1, message2, model, barcode, loop, label, panelName} = item;
-      console.log(logicalAddress, logicalAddress[0])
       const panel = facp === 'io' ? 1 : parseInt(logicalAddress[0] + logicalAddress[1]);
       const card = facp === 'io' ? 2 : parseInt(logicalAddress[2] + logicalAddress[3]);
       const address = facp === 'io' ? parseInt(item.address) : parseInt(
