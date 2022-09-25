@@ -68,7 +68,7 @@ let config = {
 const deviceSetter = new Devices(devices, config);
 
 //to merge devices with existing device data
-devices = deviceSetter().init().update(oldDevices);
+devices = deviceSetter().update(oldDevices);
 
 //without merging with existing device data
 devices = deviceSetter().init();
