@@ -4,6 +4,7 @@ Helpers for EST device data. Work in progress.
 
 ## Table of Contents
 
+- [Installation](#installation)
 - [Usage](#usage)
   - [Devices](#devices)
     - [Return Values](#return-values)
@@ -18,6 +19,12 @@ Helpers for EST device data. Work in progress.
   - [Constants](#constants)
     - [Device Types](#device-types)
     - [Barcode Types](#barcode-types)
+
+## Installation
+
+    yarn add @tysonalcorn/est-helpers
+or
+    npm install @tysonalcorn/est-helpers
 
 ## Usage
 
