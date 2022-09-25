@@ -1,6 +1,6 @@
 # est-helpers
 
-Helpers for EST device data. Work in progress.
+CommonJS Helpers for EST device data. Work in progress.
 
 ## Table of Contents
 
