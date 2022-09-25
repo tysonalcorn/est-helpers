@@ -11,6 +11,8 @@ Helpers for EST device data. Work in progress.
       - [Device Data](#device-data)
         - [EST3](#est3)
         - [IO](#io)
+  - [Create Dialer Strings](#create-dialer-strings)
+  - [Create N-Variable Inputs](#create-n-variable-inputs)
   - [Constants](#constants)
 
 ## Usage
@@ -123,6 +125,16 @@ devices = deviceSetter().init();
 ```
 
 ###### IO
+
+```javascript
+```
+
+### Create Dialer Strings
+
+```javascript
+```
+
+### Create N-Variable Inputs
 
 ```javascript
 ```
