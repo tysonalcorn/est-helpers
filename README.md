@@ -22,9 +22,9 @@ Helpers for EST device data. Work in progress.
 
 ## Installation
 
-    yarn add @tysonalcorn/est-helpers
+```yarn add @tysonalcorn/est-helpers```
 or
-    npm install @tysonalcorn/est-helpers
+```npm install @tysonalcorn/est-helpers```
 
 ## Usage
 
