@@ -44,7 +44,7 @@ logic to allow user to edit loop numbers if necessary to match fire alarm drawin
 */
 
 //to merge devices with existing device data
-devices = deviceSetter().setLoops(loops).init().merge(oldDevices);
+devices = deviceSetter().setLoops(loops).merge(oldDevices);
 
 //without merging with existing device data
 devices = deviceSetter().setLoops(loops).init(); //returns array of device objects with loop data included
@@ -70,7 +70,7 @@ let config = {
 const deviceSetter = new Devices(devices, config);
 
 //to merge devices with existing device data
-devices = deviceSetter().update(oldDevices);
+devices = deviceSetter().merge(oldDevices);
 
 //without merging with existing device data
 devices = deviceSetter().init();
