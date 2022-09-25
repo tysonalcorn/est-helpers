@@ -239,9 +239,14 @@ const nVarInputs = createNVarInput(devices, matchLabel); //[{input: ''}...]
 
 #### Device Types
 
-Array of device type objects with the following form:
+Array of device type objects
 
 ```javascript
+import {constants} from '@tysonalcorn/est-helpers';
+
+console.log(constants.deviceTypes);
+
+/*
 [
     {
       type: "Heat",
@@ -251,15 +256,22 @@ Array of device type objects with the following form:
       shortName: 'Heat',
       event: "ALARM",
       cid: 114
-    }
+    },
+    ...
 ]
+*/
 ```
 
 #### Barcode Types
 
-Array of objects containing data relevant to device barcodes with the following form:
+Array of objects containing data relevant to device barcodes
 
 ```javascript
+import {constants} from '@tysonalcorn/est-helpers';
+
+console.log(constants.barcodeTypes);
+
+/*
 [
     {
         type: 'io',
@@ -267,6 +279,8 @@ Array of objects containing data relevant to device barcodes with the following 
         module: true,
         defaultModel: 'IO',
         value: 47,
-    }
+    },
+    ...
 ]
+*/
 ```
