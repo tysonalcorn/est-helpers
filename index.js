@@ -1,6 +1,7 @@
 const extractLoops = require('./src/extractLoops.js');
 const setDeviceData = require('./src/setDeviceData.js');
 const updateDeviceData = require('./src/updateDeviceData');
+const createRules = require('./src/est3Rules');
 
 const deviceTypes = require('./src/constants/deviceTypes.js');
 const barcodeTypes = require('./src/constants/barcodeTypes.js');
@@ -47,5 +48,15 @@ const constants = {
     barcodeTypes
 };
 
+function createDialerStrings (devices = [], matchLabel = '', modcomLabel = '', defaultStrings = [''], defaultPartition = '', defaultZone = '') {
+    return createRules(devices, matchLabel, true, modcomLabel, defaultStrings, defaultPartition, defaultZone);
+};
+
+function createNVarInput (devices = [], matchLabel = '') {
+    return createRules(devices, matchLabel);
+};
+
 exports.Devices = Devices;
+exports.createDialerStrings = createDialerStrings;
+exports.createNVarInput = createNVarInput;
 exports.constants = constants;
